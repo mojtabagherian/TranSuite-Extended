@@ -55,7 +55,7 @@ def get_models_gff3(filename):
     by calling add_feature_gff3()
     '''
 
-    infile = open(filename, 'rU')
+    infile = open(filename, 'r')
     gff_lines = infile.readlines()
     infile.close()
 
@@ -91,7 +91,7 @@ def get_models_gff3(filename):
 
 def get_models_gtf(gtf_filename):
     '''Build gene models from gtf file'''
-    infile = open(gtf_filename, 'rU')
+    infile = open(gtf_filename, 'r')
     gff_lines = infile.readlines()
     infile.close()
 

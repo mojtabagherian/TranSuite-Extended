@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2020 anonconda
+Copyright (c) 2024 Mojtaba Bagherian, James PB Lloyd
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,12 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+This software is based on TranSuite, originally developed by:
+Juan C Entizne, Wenbin Guo, Cristiane P.G. Calixto, Mark Spensley, 
+Nikoleta Tzioutziou, Runxuan Zhang, and John W. S. Brown.
+
+Original TranSuite is available at: https://github.com/anonconda/TranSuite
+Original TranSuite is also licensed under the MIT License.

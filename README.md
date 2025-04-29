@@ -4,6 +4,47 @@ A software suite for accurate identification, annotation, translation, and featu
 Reference: 
 * Juan C Entizne, Wenbin Guo, Cristiane P.G. Calixto, Mark Spensley, Nikoleta Tzioutziou, Runxuan Zhang, and John W. S. Brown; [*TranSuite: a software suite for accurate translation and characterization of transcripts*](https://www.biorxiv.org/content/10.1101/2020.12.15.422989v1) (*Peer review in progress*).
 
+# TranSuite-Extended
+
+An enhanced version of TranSuite with additional features for comprehensive transcript analysis.
+
+## Overview of Extended Features
+
+TranSuite-Extended builds upon the original TranSuite software with the following enhancements:
+
+1. **Enhanced UTR Analysis**
+   - More accurate 3' UTR length calculations
+   - Improved exon-only distance calculations
+   - Better handling of edge cases in UTR analysis
+
+2. **Advanced Splice Junction Analysis**
+   - Detailed upstream junction (USJ) distance calculations
+   - Enhanced downstream junction (DSJ) distance analysis
+   - New splice_junctions.csv output file with comprehensive junction data
+
+3. **Improved Error Handling**
+   - Better logging and error reporting
+   - More robust distance calculations
+   - Enhanced validation of input data
+
+4. **Bug Fixes and Stability Improvements**
+   - Fixed chimeric gene detection and handling
+   - Resolved issues with reading frame (RU) open calculations
+   - Improved handling of edge cases in transcript analysis
+   - Enhanced error recovery and reporting
+
+5. **Compatibility Updates**
+   - Updated to support newer versions of BioPython
+   - Improved compatibility with Python 3.8+
+
+6. **New Output Files**
+   - `splice_junctions.csv`: Detailed junction information including:
+     - T_ID: Transcript identifier
+     - Strand: Transcript orientation
+     - UpstreamEJ: Distance to upstream exon junction
+     - DownstreamEJ: Distance to downstream exon junction
+     - 3UTRlength: Length of 3' UTR
+     - is_PTC50nt: PTC status based on 50nt rule
 
 ----------------------------
 # Table of Contents
@@ -37,7 +78,7 @@ Reference:
 TranSuite is a software for identifying coding sequences of transcripts, selecting translation start sites at gene-level, generating accurate translations of transcript isoforms, and identifying and characterizing multiple coding related features, such as: coding potential, similar-translation features, and multiple NMD-related signals. TranSuite consists of three independent modules, FindLORF, TransFix and TransFeat (Fig. 1). Each module can be run independently or as a [pipeline with a single command](#auto).
 
 - FindLORFS - finds and annotates the longest ORF of each transcript
-- TransFix - “fixes” the same translation start codon AUG in all the transcripts in a gene and re-annotates the resulting ORF of the transcripts (Fig. 2)
+- TransFix - "fixes" the same translation start codon AUG in all the transcripts in a gene and re-annotates the resulting ORF of the transcripts (Fig. 2)
 - TransFeat - identifies structural features of transcripts, coding potential and NMD signals (Fig. 3)
 - Auto - executes the whole pipeline (FindLORFS, TransFix, and TransFeat) in tandem (Fig. 1)
 
@@ -54,7 +95,7 @@ TranSuite is a software for identifying coding sequences of transcripts, selecti
 
 ![Fig2_TransFeat_workflow.jpg](https://drive.google.com/uc?id=1_Lasc18vsbYccNHJ8pG6xXCf7-DMVfxM)
 
-**Fig 3.** Transcript feature characterisation by TransFeat. A) translation data identifies transcripts with non-coding features (no CDS - no AUG; CDS < 30 amino acids or short ORF where CDS is between 30-100 amino acids (default values); Genes with only no CDS transcripts are classed as Non-coding genes; B) All other genes and their associated transcripts are protein-coding genes. Transcripts containing a PTC (PTC+) are unproductive and all other transcripts are protein coding isoforms. Transcripts of some genes code for identical proteins if AS occurs only in the 5’ and/or 3’UTRs. Transcripts with NAGNAG alternative splicing code for proteins which differ by one amino acid. Other protein-coding transcripts encode protein variants. C) PTC+ transcripts are further characterised by different features: downstream splice junction, long 3’UTR and overlapping uORF (NMD signals), in frame and out of frame uORFs, long downstream ORFs. The dotted line from in/out of frame uORFs reflects the potential of some uORFs to trigger NMD.
+**Fig 3.** Transcript feature characterisation by TransFeat. A) translation data identifies transcripts with non-coding features (no CDS - no AUG; CDS < 30 amino acids or short ORF where CDS is between 30-100 amino acids (default values); Genes with only no CDS transcripts are classed as Non-coding genes; B) All other genes and their associated transcripts are protein-coding genes. Transcripts containing a PTC (PTC+) are unproductive and all other transcripts are protein coding isoforms. Transcripts of some genes code for identical proteins if AS occurs only in the 5' and/or 3'UTRs. Transcripts with NAGNAG alternative splicing code for proteins which differ by one amino acid. Other protein-coding transcripts encode protein variants. C) PTC+ transcripts are further characterised by different features: downstream splice junction, long 3'UTR and overlapping uORF (NMD signals), in frame and out of frame uORFs, long downstream ORFs. The dotted line from in/out of frame uORFs reflects the potential of some uORFs to trigger NMD.
 
 
 ----------------------------
@@ -171,7 +212,7 @@ FindLORF generates the following output files:
 ==============
 -------------------
 
-TransFix provides more biologically accurate translations by selecting the authentic translation start site for a gene, “fixing” this location and using it to translate the gene transcripts and annotating the resulting CDS of the translations. We define the authentic translation start site as the site used to produce the full-length protein of the gene. In detail, TransFix firstly extracts the CDS co-ordinates of the transcripts from the transcriptome annotation and groups the transcripts according to their gene of origin. Then, TransFix selects the start codon of the longest annotated CDS in the gene as the representative translation start site and translates all of the transcripts in the gene from the “fixed” translation start site. Finally, TransFix annotates the genomic co-ordinates of the resulting stop codons. In some cases, transcript isoforms do not contain the “fixed” translation start site due to an AS event or an alternative transcription start site. To account for this, TransFix tracks those transcripts that are not translated during the first fix AUG/translation cycle and they are then processed through a second fix AUG/translation cycle to determine and annotate their valid translation start-sites.
+TransFix provides more biologically accurate translations by selecting the authentic translation start site for a gene, "fixing" this location and using it to translate the gene transcripts and annotating the resulting CDS of the translations. We define the authentic translation start site as the site used to produce the full-length protein of the gene. In detail, TransFix firstly extracts the CDS co-ordinates of the transcripts from the transcriptome annotation and groups the transcripts according to their gene of origin. Then, TransFix selects the start codon of the longest annotated CDS in the gene as the representative translation start site and translates all of the transcripts in the gene from the "fixed" translation start site. Finally, TransFix annotates the genomic co-ordinates of the resulting stop codons. In some cases, transcript isoforms do not contain the "fixed" translation start site due to an AS event or an alternative transcription start site. To account for this, TransFix tracks those transcripts that are not translated during the first fix AUG/translation cycle and they are then processed through a second fix AUG/translation cycle to determine and annotate their valid translation start-sites.
 
 ### **Command and options** ###
 Command to run TransFix:
@@ -317,3 +358,36 @@ TranSuite is released under the [MIT license](https://opensource.org/licenses/MI
 ----------------------------
 
 For any further enquiries please contact the main developer at <e.entizne@dundee.ac.uk>
+
+## Authors
+
+Original TranSuite:
+- Juan C Entizne
+- Wenbin Guo
+- Cristiane P.G. Calixto
+- Mark Spensley
+- Nikoleta Tzioutziou
+- Runxuan Zhang
+- John W. S. Brown
+
+TranSuite-Extended:
+- Mojtaba Bagherian
+- James PB Lloyd
+
+## Citation
+
+When using TranSuite-Extended, please cite both:
+1. The original TranSuite paper
+2. This extended version
+
+## License
+
+TranSuite-Extended is released under the same [MIT license](https://opensource.org/licenses/MIT) as the original TranSuite.
+
+## Contact
+
+For questions about the extended features, please contact:
+[Your Contact Information]
+
+For questions about the original TranSuite, please contact:
+<e.entizne@dundee.ac.uk>

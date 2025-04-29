@@ -1,0 +1,48 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "TranSuite-Extended"
+version: 1.0.0
+date-released: "2024-03-XX"
+doi: "10.5281/zenodo.XXXXXXX" 
+url: "https://github.com/mojtabagherian/TranSuite-Extended"
+repository-code: "https://github.com/mojtabagherian/TranSuite-Extended"
+license: MIT
+abstract: "TranSuite-Extended is an enhanced version of TranSuite with additional features for comprehensive transcript analysis, including improved UTR analysis, advanced splice junction analysis, and bug fixes for chimeric gene detection and reading frame calculations."
+keywords:
+  - bioinformatics
+  - transcriptome-analysis
+  - python
+  - transcript-annotation
+  - splice-junctions
+  - UTR-analysis
+authors:
+  - family-names: "Bagherian"
+    given-names: "Mojtaba"
+    orcid: "ORCID"  
+    affiliation: "AFFILIATION"  
+  - family-names: "Lloyd"
+    given-names: "James PB"
+    orcid: "ORCID"  
+    affiliation: "AFFILIATION"  
+references:
+  - type: software
+    title: "TranSuite"
+    authors:
+      - family-names: "Entizne"
+        given-names: "Juan C"
+      - family-names: "Guo"
+        given-names: "Wenbin"
+      - family-names: "Calixto"
+        given-names: "Cristiane P.G"
+      - family-names: "Spensley"
+        given-names: "Mark"
+      - family-names: "Tzioutziou"
+        given-names: "Nikoleta"
+      - family-names: "Zhang"
+        given-names: "Runxuan"
+      - family-names: "Brown"
+        given-names: "John W. S"
+    doi: "10.1101/2020.12.15.422989"
+    url: "https://github.com/anonconda/TranSuite"
+    year: 2020
+    version: "1.0.0" 
