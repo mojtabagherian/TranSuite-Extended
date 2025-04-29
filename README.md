@@ -387,7 +387,7 @@ TranSuite-Extended is released under the same [MIT license](https://opensource.o
 ## Contact
 
 For questions about the extended features, please contact:
-[Your Contact Information]
+<mojtaba.bagherian@uwa.edu.au>
 
 For questions about the original TranSuite, please contact:
 <e.entizne@dundee.ac.uk>
