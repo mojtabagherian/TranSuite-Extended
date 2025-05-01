@@ -4,13 +4,15 @@ A software suite for accurate identification, annotation, translation, and featu
 Reference: 
 * Juan C Entizne, Wenbin Guo, Cristiane P.G. Calixto, Mark Spensley, Nikoleta Tzioutziou, Runxuan Zhang, and John W. S. Brown; [*TranSuite: a software suite for accurate translation and characterization of transcripts*](https://www.biorxiv.org/content/10.1101/2020.12.15.422989v1) (*Peer review in progress*).
 
-# TranSuite-Extended
+Original TranSuite repository: https://github.com/anonconda/TranSuite
+
+# TranSuite v2
 
 An enhanced version of TranSuite with additional features for comprehensive transcript analysis.
 
 ## Overview of Extended Features
 
-TranSuite-Extended builds upon the original TranSuite software with the following enhancements:
+TranSuite v2 builds upon the original TranSuite software with the following enhancements:
 
 1. **Enhanced UTR Analysis**
    - More accurate 3' UTR length calculations
@@ -44,7 +46,7 @@ TranSuite-Extended builds upon the original TranSuite software with the followin
      - UpstreamEJ: Distance to upstream exon junction
      - DownstreamEJ: Distance to downstream exon junction
      - 3UTRlength: Length of 3' UTR
-     - is_PTC50nt: PTC status based on 50nt rule
+     - PTC_dEJ: PTC status based on 50nt rule
 
 ----------------------------
 # Table of Contents
@@ -370,19 +372,19 @@ Original TranSuite:
 - Runxuan Zhang
 - John W. S. Brown
 
-TranSuite-Extended:
+TranSuite v2:
 - Mojtaba Bagherian
 - James PB Lloyd
 
 ## Citation
 
-When using TranSuite-Extended, please cite both:
+When using TranSuite v2, please cite both:
 1. The original TranSuite paper
 2. This extended version
 
 ## License
 
-TranSuite-Extended is released under the same [MIT license](https://opensource.org/licenses/MIT) as the original TranSuite.
+TranSuite v2 is released under the same [MIT license](https://opensource.org/licenses/MIT) as the original TranSuite.
 
 ## Contact
 

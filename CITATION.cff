@@ -1,13 +1,13 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
-title: "TranSuite-Extended"
+title: "TranSuite v2"
 version: 1.0.0
 date-released: "2024-03-XX"
 doi: "10.5281/zenodo.XXXXXXX" 
 url: "https://github.com/mojtabagherian/TranSuite-Extended"
 repository-code: "https://github.com/mojtabagherian/TranSuite-Extended"
 license: MIT
-abstract: "TranSuite-Extended is an enhanced version of TranSuite with additional features for comprehensive transcript analysis, including improved UTR analysis, advanced splice junction analysis, and bug fixes for chimeric gene detection and reading frame calculations."
+abstract: "TranSuite v2 is an enhanced version of TranSuite with additional features for comprehensive transcript analysis, including improved UTR analysis, advanced splice junction analysis, and bug fixes for chimeric gene detection and reading frame calculations."
 keywords:
   - bioinformatics
   - transcriptome-analysis

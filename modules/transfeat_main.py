@@ -324,7 +324,7 @@ def transfeat_main(
     # Write detailed splice junction data to separate file with the new column names
     splice_junctions_file = os.path.join(outfolder, f"{outname}_splice_junctions.csv")
     with open(splice_junctions_file, "w+") as fh:
-        fh.write("T_ID,Strand,UpstreamEJ,DownstreamEJ,3UTRlength,is_PTC50nt\n")
+        fh.write("T_ID,Strand,UpstreamEJ,DownstreamEJ,3UTRlength,PTC_dEJ\n")
         for trans_id in sorted(gtf_obj.trans_exons_dt.keys()):
             strand = gtf_obj.trans_sense_dt[trans_id]
             upstream_ej = usj_distance_dt.get(trans_id, "NA")
@@ -332,15 +332,15 @@ def transfeat_main(
             utr3_length = threeprimeUTR_len_dt.get(trans_id, 0)
             
             # Determine PTC status based on DownstreamEJ distance
-            is_ptc50nt = "No"
+            ptc_dEJ = "No"
             if downstream_ej != "NA":
                 try:
                     if int(downstream_ej) >= 50:
-                        is_ptc50nt = "Yes"
+                        ptc_dEJ = "Yes"
                 except (ValueError, TypeError):
                     pass
             
-            fh.write(f"{trans_id},{strand},{upstream_ej},{downstream_ej},{utr3_length},{is_ptc50nt}\n")
+            fh.write(f"{trans_id},{strand},{upstream_ej},{downstream_ej},{utr3_length},{ptc_dEJ}\n")
 
     # Write TransFeat table output
     transfeat_table = write_transfeat_table(
