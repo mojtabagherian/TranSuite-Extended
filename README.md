@@ -10,7 +10,7 @@ Original TranSuite repository: https://github.com/anonconda/TranSuite
 
 An enhanced version of TranSuite with additional features for comprehensive transcript analysis.
 
-## Overview of Extended Features
+## Overview of Features
 
 TranSuite v2 builds upon the original TranSuite software with the following enhancements:
 
@@ -359,7 +359,11 @@ TranSuite is released under the [MIT license](https://opensource.org/licenses/MI
 # Contact
 ----------------------------
 
-For any further enquiries please contact the main developer at <e.entizne@dundee.ac.uk>
+For questions about the enhanced features, please contact:
+<mojtaba.bagherian@uwa.edu.au>
+
+For questions about the original TranSuite, please contact:
+<e.entizne@dundee.ac.uk>
 
 ## Authors
 
@@ -385,11 +389,3 @@ When using TranSuite v2, please cite both:
 ## License
 
 TranSuite v2 is released under the same [MIT license](https://opensource.org/licenses/MIT) as the original TranSuite.
-
-## Contact
-
-For questions about the extended features, please contact:
-[Your Contact Information]
-
-For questions about the original TranSuite, please contact:
-<e.entizne@dundee.ac.uk>
